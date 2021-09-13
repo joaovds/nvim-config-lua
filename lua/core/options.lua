@@ -11,3 +11,9 @@ opt.softtabstop = 2
 opt.shiftwidth = 2
 
 opt.scrolloff = 20
+
+-- Scrolling
+vim.cmd [[
+  nnoremap k kzz
+  nnoremap j jzz
+]]
