@@ -54,4 +54,13 @@ return require('packer').startup(function()
 
   -- coc.nvim
   use { 'neoclide/coc.nvim', branch = 'release' }
+
+  -- git stuff
+  use {
+    "lewis6991/gitsigns.nvim",
+    opt = true,
+    config = function()
+      require "plugins.configs.gitsigns"
+    end,
+  }
 end)
