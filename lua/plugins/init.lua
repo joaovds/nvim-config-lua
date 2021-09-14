@@ -30,4 +30,13 @@ return require('packer').startup(function()
       require "plugins.configs.bufferline"
     end
   }
+
+  -- treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    event = "BufRead",
+    config = function()
+      require "plugins.configs.treesitter"
+    end,
+  }
 end)
