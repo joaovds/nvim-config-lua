@@ -40,6 +40,7 @@ return require('packer').startup(function()
     end,
   }
 
+  -- telescope
   use {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
@@ -50,4 +51,7 @@ return require('packer').startup(function()
       require "plugins.configs.telescope"
     end
   }
+
+  -- coc.nvim
+  use { 'neoclide/coc.nvim', branch = 'release' }
 end)
