@@ -39,4 +39,15 @@ return require('packer').startup(function()
       require "plugins.configs.treesitter"
     end,
   }
+
+  use {
+    "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+    },
+    config = function()
+      require "plugins.configs.telescope"
+    end
+  }
 end)
