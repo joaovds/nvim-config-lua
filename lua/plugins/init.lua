@@ -8,7 +8,7 @@ end
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  
+
   -- file managing
   use {
     'kyazdani42/nvim-tree.lua',
@@ -17,8 +17,17 @@ return require('packer').startup(function()
       require "plugins.configs.nvimtree"
     end
   }
-  
+
   use "kyazdani42/nvim-web-devicons"
 
+  -- theme
   use "kyazdani42/blue-moon"
+
+  -- bufferline
+  use {
+    'akinsho/bufferline.nvim',
+    config = function ()
+      require "plugins.configs.bufferline"
+    end
+  }
 end)
