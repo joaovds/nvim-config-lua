@@ -63,4 +63,12 @@ return require('packer').startup(function()
       require "plugins.configs.gitsigns"
     end,
   }
+
+  -- statusline
+  use {
+    "famiu/feline.nvim",
+    config = function()
+      require "plugins.configs.statusline"
+    end,
+  }
 end)
