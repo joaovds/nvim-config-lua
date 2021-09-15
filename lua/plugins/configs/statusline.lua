@@ -324,6 +324,31 @@ components.active[3][10] = {
   },
 }
 
+components.inactive[1][1] = {
+  provider = icons_styles.arrow.main_icon,
+  
+  hl = {
+    bg = colors.bgVariants.b800,
+    fg = colors.yellow,
+  },
+  
+  right_sep = {
+    str = icons_styles.arrow.right,
+    hl = {
+      bg = colors.bgVariants.b700,
+      fg = colors.bgVariants.b800,
+    }
+  }
+}
+
+components.inactive[1][2] = {
+  provider = icons_styles.arrow.right,
+  hl = {
+    bg = colors.bgVariants.b600,
+    fg = colors.bgVariants.b700,
+  },
+}
+
 require('feline').setup({
   colors = {
     bg = colors.bgVariants.b800,
