@@ -70,4 +70,18 @@ return require('packer').startup(function()
       require "plugins.configs.statusline"
     end,
   }
+
+  use {
+    'windwp/nvim-autopairs',
+    config = function ()
+      require('nvim-autopairs').setup{}
+    end
+  }
+
+  use {
+    'terrortylor/nvim-comment',
+    config = function ()
+      require('nvim_comment').setup()
+    end
+  }
 end)
