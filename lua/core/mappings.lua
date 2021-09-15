@@ -20,3 +20,5 @@ if vim.fn.has('nvim') == 1 then
 else
   map("i", "<C-@>", "coc#refresh()", { expr = true, silent = true })
 end
+
+map("i", "<CR>", 'pumvisible() ? coc#_select_confirm() : "\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>"', { expr = true, silent = true })
