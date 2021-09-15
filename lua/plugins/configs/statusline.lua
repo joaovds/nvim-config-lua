@@ -30,7 +30,7 @@ local icons_styles = {
     right = "",
     main_icon = "  ",
     vi_mode_icon = " ",
-    position_icon = " ",
+    position_icon = " ",
   }
 }
 
@@ -52,15 +52,15 @@ components.active[1][1] = {
   provider = icons_styles.arrow.main_icon,
   
   hl = {
-    bg = colors.grey,
-    fg = colors.blue,
+    bg = colors.bgVariants.b800,
+    fg = colors.yellow,
   },
   
   right_sep = {
     str = icons_styles.arrow.right,
     hl = {
-      bg = '#171C2B',
-      fg = colors.blue,
+      bg = colors.bgVariants.b700,
+      fg = colors.bgVariants.b800,
     }
   }
 }
@@ -79,15 +79,15 @@ components.active[1][2] = {
   end,
   
   hl = {
-    bg = '#171C2B',
+    bg = colors.bgVariants.b700,
     fg = colors.cyan,
   },
   
   right_sep = {
     str = icons_styles.arrow.right,
     hl = {
-      bg = '#1E2538',
-      fg = '#2A334D',
+      bg = colors.bgVariants.b600,
+      fg = colors.bgVariants.b700,
     }
   }
 }
@@ -99,15 +99,15 @@ components.active[1][3] = {
   end,
   
   hl = {
-    bg = '#1E2538',
-    fg = '#4C5B8A',
+    bg = colors.bgVariants.b600,
+    fg = colors.fg,
   },
   
   right_sep = {
     str = icons_styles.arrow.right,
     hl = {
-      bg = '#1E2538',
-      fg = '#2A334D',
+      bg = colors.bgVariants.b800,
+      fg = colors.bgVariants.b600,
     }
   }
 }
@@ -115,8 +115,8 @@ components.active[1][3] = {
 components.active[1][4] = {
   provider = "git_diff_added",
   hl = {
-    fg = colors.grey,
-    bg = colors.bg,
+    fg = colors.bgVariants.cyan,
+    bg = colors.bgVariants.b800,
   },
   icon = "  ",
 }
@@ -124,8 +124,8 @@ components.active[1][4] = {
 components.active[1][5] = {
   provider = "git_diff_changed",
   hl = {
-    fg = colors.grey,
-    bg = colors.bg,
+    fg = colors.bgVariants.cyan,
+    bg = colors.bgVariants.b800,
   },
   icon = "  ",
 }
@@ -133,8 +133,8 @@ components.active[1][5] = {
 components.active[1][6] = {
   provider = "git_diff_removed",
   hl = {
-    fg = colors.grey,
-    bg = colors.bg,
+    fg = colors.bgVariants.cyan,
+    bg = colors.bgVariants.b800,
   },
   icon = "  ",
 }
@@ -215,79 +215,96 @@ components.active[2][1] = {
 local chad_mode_hl = function()
   return {
     fg = vi_mode_colors[vim.fn.mode()][2],
-    bg = colors.bg,
+    bg = colors.bgVariants.b800,
   }
 end
 
 components.active[3][1] = {
-  provider = "git_branch",
+  provider = " " .. icons_styles.arrow.left,
   hl = {
-    bg = '#1E2538',
-    fg = '#4C5B8A',
+    fg = colors.bgVariants.b700,
+    bg = colors.bgVariants.b800,
   },
-  icon = "  ",
 }
 
 components.active[3][2] = {
-  provider = " " .. icons_styles.arrow.left,
+  provider = "git_branch",
+  
   hl = {
-    fg = colors.red,
-    bg = colors.bg,
+    bg = colors.bgVariants.b600,
+    fg = colors.orange,
   },
+  icon = "  ",
+
+  left_sep = {
+    str = icons_styles.arrow.left,
+    hl = {
+      bg = colors.bgVariants.b700,
+      fg = colors.bgVariants.b600,
+    }
+  }
 }
 
 components.active[3][3] = {
+  provider = " " .. icons_styles.arrow.left,
+  hl = {
+    bg = colors.bgVariants.b600,
+    fg = colors.bgVariants.b500,
+  },
+}
+
+components.active[3][4] = {
   provider = icons_styles.arrow.left,
   hl = function()
     return {
       fg = vi_mode_colors[vim.fn.mode()][2],
-      bg = colors.bg,
-    }
-  end,
-}
-
-components.active[3][4] = {
-  provider = icons_styles.arrow.vi_mode_icon,
-  hl = function()
-    return {
-      fg = colors.bg,
-      bg = vi_mode_colors[vim.fn.mode()][2],
+      bg = colors.bgVariants.b500,
     }
   end,
 }
 
 components.active[3][5] = {
+  provider = icons_styles.arrow.vi_mode_icon,
+  hl = function()
+    return {
+      fg = '#f8f8f8',
+      bg = vi_mode_colors[vim.fn.mode()][2],
+    }
+  end,
+}
+
+components.active[3][6] = {
   provider = function()
     return " " .. vi_mode_colors[vim.fn.mode()][1] .. " "
   end,
   hl = chad_mode_hl,
 }
 
-components.active[3][6] = {
-  provider = icons_styles.arrow.left,
-  hl = {
-    fg = colors.grey,
-    bg = colors.bg,
-  },
-}
-
 components.active[3][7] = {
   provider = icons_styles.arrow.left,
   hl = {
-    fg = colors.green,
-    bg = colors.grey,
+    fg = colors.bgVariants.b300,
+    bg = colors.bgVariants.b800,
   },
 }
 
 components.active[3][8] = {
-  provider = icons_styles.arrow.position_icon,
+  provider = icons_styles.arrow.left,
   hl = {
-    fg = colors.bg,
-    bg = colors.green,
+    fg = colors.cyan,
+    bg = colors.bgVariants.b300,
   },
 }
 
 components.active[3][9] = {
+  provider = icons_styles.arrow.position_icon,
+  hl = {
+    fg = colors.bgVariants.b300,
+    bg = colors.cyan,
+  },
+}
+
+components.active[3][10] = {
   provider = function()
     local current_line = vim.fn.line "."
     local total_line = vim.fn.line "$"
@@ -302,14 +319,14 @@ components.active[3][9] = {
   end,
   
   hl = {
-    fg = colors.green,
-    bg = colors.one_bg,
+    fg = colors.bgVariants.b300,
+    bg = colors.cyan,
   },
 }
 
 require('feline').setup({
   colors = {
-    bg = colors.bg,
+    bg = colors.bgVariants.b800,
     fg = colors.fg,
   },
   vi_mode_colors = vi_mode_colors,
