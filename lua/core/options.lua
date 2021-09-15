@@ -14,10 +14,6 @@ opt.shiftwidth = 2
 
 opt.scrolloff = 20
 
-opt.termguicolors = true
-cmd('colorscheme blue-moon')
-g.lightline = { colorscheme = 'blue-moon' }
-
 -- Scrolling
 vim.cmd [[
   nnoremap k kzz
