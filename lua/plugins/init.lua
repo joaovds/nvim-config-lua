@@ -8,7 +8,7 @@ end
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
+  
   -- file managing
   use {
     'kyazdani42/nvim-tree.lua',
@@ -17,12 +17,12 @@ return require('packer').startup(function()
       require "plugins.configs.nvimtree"
     end
   }
-
+  
   use "kyazdani42/nvim-web-devicons"
-
+  
   -- theme
   use "kyazdani42/blue-moon"
-
+  
   -- bufferline
   use {
     'akinsho/bufferline.nvim',
@@ -30,7 +30,7 @@ return require('packer').startup(function()
       require "plugins.configs.bufferline"
     end
   }
-
+  
   -- treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -39,7 +39,7 @@ return require('packer').startup(function()
       require "plugins.configs.treesitter"
     end,
   }
-
+  
   -- telescope
   use {
     "nvim-telescope/telescope.nvim",
@@ -51,19 +51,18 @@ return require('packer').startup(function()
       require "plugins.configs.telescope"
     end
   }
-
+  
   -- coc.nvim
   use { 'neoclide/coc.nvim', branch = 'release' }
-
+  
   -- git stuff
   use {
     "lewis6991/gitsigns.nvim",
-    opt = true,
     config = function()
       require "plugins.configs.gitsigns"
     end,
   }
-
+  
   -- statusline
   use {
     "famiu/feline.nvim",
